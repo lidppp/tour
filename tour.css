@@ -1,0 +1,30 @@
+.dp-backdrop {
+  box-shadow: rgba(20, 20, 21, 0.84) 0px 0px 1px 2px, rgb(0 0 0 / 84%) 0px 0px 0px 10000vh;
+  width: var(--w);
+  height: var(--h);
+  border-radius: 8px;
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  z-index: 9999;
+  transition: all 0.3s;
+}
+
+.dp-msgbox {
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  top: var(--y);
+  background: red;
+  transition: all 0.3s;
+}
+
+.dp-arrow {
+  transition: all 0.3s;
+  position: absolute;
+  width: var(--arroww);
+  height: var(--arrowh);
+  top: var(--arrowy);
+  left: var(--arrowx);
+  background-color: aqua;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <link rel="stylesheet" href="./tour.css">
+</head>
+
+<body>
+  <button onclick="start()">start</button>
+
+  <div style="display: flex">
+    <div id="t1"
+      style="width: 100px;height: 100px; margin-top: 80px; margin-left: 50px; background-color: lemonchiffon;">
+
+    </div>
+    <div id="t2"
+      style="width: 40px;height: 200px; margin-top: 80px; margin-left: 100px; background-color: lemonchiffon;">
+
+    </div>
+  </div>
+
+  <div style="height: 200vh;"></div>
+
+  <div id="t3"
+    style="width: 100px;height: 100px; margin-top: 80px; margin-left: 200px; background-color: lemonchiffon;">
+
+  </div>
+  <div id="t4"
+    style="width: 100px;height: 100px; margin-top: 80px; margin-left: 200px; background-color: lemonchiffon;">
+
+  </div>
+
+  <div style="height: 200vh;"></div>
+
+
+  <button onclick="start()">start</button>
+
+  <script src="./tour.js"></script>
+  <script>
+    const t1 = document.querySelector("#t1");
+    const t2 = document.querySelector("#t2");
+    const t3 = document.querySelector("#t3");
+
+    const defaultHtml = `
+        <div class="content">
+          <div>123123</div>
+          <div>123123</div>
+          <div>123213</div>
+        </div>
+        <div>
+          <button onclick="previous()">←</button>
+          <button onclick="next()">→</button>
+        </div>`
+
+    const datas = [{
+      dom: t1,
+      html: defaultHtml
+    }, {
+      dom: t2,
+      html: defaultHtml
+    }, {
+      dom: t3,
+      html: defaultHtml,
+      msgPosition: 'top'
+    }]
+
+    const tour = new Tour(datas)
+
+    function next () {
+      tour.next()
+    }
+
+    function previous () {
+      tour.previous()
+    }
+
+    function start () {
+      tour.start()
+    }
+
+  </script>
+</body>
+
+</html>
