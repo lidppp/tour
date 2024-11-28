@@ -40,12 +40,19 @@ class TourCore {
 
   /**
    * 配置项
+   *
    * radius 高亮框外扩大小
+   *
    * arrowHeight 箭头高度
+   *
    * arrowWidth 箭头宽度
+   *
    * scrollTopOffset 当position为'top'时 距离顶部的偏移量
+   *
    * scrollBottomOffset 当position为'bottom'时 距离底部的偏移量
+   *
    * parentNode 插入节点的父元素
+   *
    * @type {{scrollTopOffset: number, scrollBottomOffset: number, arrowHeight: number, radius: number, arrowWidth: number, parentNode: HTMLElement}}
    */
   options = {
@@ -159,8 +166,8 @@ class TourCore {
 
 class Tour {
   /**
-   *
-   * @type {[{dom: HTMLElement, html: String, msgPosition: 'top' | 'bottom'}]}
+   * 数据列表
+   * @type {Array<{dom: HTMLElement, html: String, msgPosition?: 'top' | 'bottom'}>}
    */
   dataList = [];
   /**
@@ -177,7 +184,7 @@ class Tour {
 
   /**
    * constructor
-   * @param _dataList {[{dom: HTMLElement, html: String}]}  数据列表
+   * @param _dataList {Tour.dataList}  数据列表
    * @param options {TourCore.options} 配置项
    */
   constructor(_dataList, options) {
